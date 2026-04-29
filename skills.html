@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keahlian — Zildan</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .skills-intro { max-width: 520px; margin-bottom: 4rem; }
+
+    .skill-category { margin-bottom: 4rem; }
+    .category-title {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.75rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .skill-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+
+    .skill-header {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .skill-icon {
+      width: 38px; height: 38px;
+      background: var(--accent-light);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .skill-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+    .skill-card h3 { font-size: 0.95rem; font-weight: 500; color: var(--text); }
+    .skill-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
+
+    .skill-level {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .level-bar {
+      flex: 1;
+      height: 4px;
+      background: var(--border);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .level-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 100px;
+      width: 0;
+      transition: width 1s ease 0.3s;
+    }
+    .level-label { font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
+
+    /* Tools section */
+    .tools-wrap { margin-top: 4rem; }
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+    }
+    .tool-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.83rem;
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+    }
+
+    /* Certifications */
+    .cert-list { margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .cert-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .cert-name { font-size: 0.9rem; font-weight: 400; color: var(--text); }
+    .cert-issuer { font-size: 0.8rem; color: var(--muted); }
+    .cert-badge {
+      font-size: 0.72rem;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+<a href="index.html" class="nav-logo" style="display:flex; align-items:center; text-decoration:none; gap:2px;">
+  <span style="font-family:'Arial Black',sans-serif; font-size:1.5rem; font-weight:900; color:#2D5BE3; letter-spacing:-1px; line-height:1;">Z</span>
+  <span style="font-family:'Arial Black',sans-serif; font-size:1.5rem; font-weight:900; color:#1A1917; letter-spacing:-1px; line-height:1;">N</span>
+  <span style="font-family:'Arial Black',sans-serif; font-size:1.5rem; font-weight:900; color:#2D5BE3; letter-spacing:-1px; line-height:1;">Z</span>
+</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Tentang</a></li>
+      <li><a href="skills.html" class="active">Keahlian</a></li>
+      <li><a href="projects.html">Proyek</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="section-label">Keahlian</div>
+
+    <div class="skills-intro fade-up">
+      <h2>Apa yang bisa saya lakukan?</h2>
+      <p>Keahlian yang saya pelajari selama belajar di jurusan TJKT, baik dari sekolah, praktikum, maupun belajar mandiri.</p>
+    </div>
+
+    <!-- NETWORKING -->
+    <div class="skill-category fade-up">
+      <div class="category-title">Jaringan Komputer</div>
+      <div class="skills-grid">
+
+        <div class="skill-card" data-level="80">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M6 14h.01"/><path d="M10 10h8M10 14h8"/></svg>
+            </div>
+            <h3>Konfigurasi Router & Switch</h3>
+          </div>
+          <p>VLAN, STP, inter-VLAN routing, routing statis dan dinamis (RIP, OSPF) menggunakan perangkat Cisco dan Pnet</p>
+          <div class="skill-level">
+            <div class="level-bar"><div class="level-fill" style="--target:80%"></div></div>
+            <span class="level-label">Menengah</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-level="70">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            </div>
+            <h3>TCP/IP & Protokol Jaringan</h3>
+          </div>
+          <p>Memahami model OSI, TCP/IP stack, subnetting, NAT/PAT, DHCP, DNS, HTTP/S, FTP, dan protokol umum lainnya.</p>
+          <div class="skill-level">
+            <div class="level-bar"><div class="level-fill" style="--target:70%"></div></div>
+            <span class="level-label">Menengah</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-level="65">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Keamanan Jaringan</h3>
+          </div>
+          <p>Konfigurasi firewall, ACL, port security, dan konsep dasar keamanan jaringan untuk melindungi infrastruktur.</p>
+          <div class="skill-level">
+            <div class="level-bar"><div class="level-fill" style="--target:50%"></div></div>
+            <span class="level-label">Pemula</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SERVER & OS -->
+    <div class="skill-category fade-up">
+      <div class="category-title">Server & Sistem Operasi</div>
+      <div class="skills-grid">
+
+        <div class="skill-card" data-level="75">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h3>Linux Administration</h3>
+          </div>
+          <p>Navigasi CLI Linux, manajemen file & user, instalasi paket, dan konfigurasi layanan dasar di Ubuntu/Debian.</p>
+          <div class="skill-level">
+            <div class="level-bar"><div class="level-fill" style="--target:50%"></div></div>
+            <span class="level-label">Pemula</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-level="60">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h3>Web & Database Server</h3>
+          </div>
+          <p>Konfigurasi Apache/Nginx web server dan MySQL/MariaDB database server di lingkungan Linux.</p>
+          <div class="skill-level">
+            <div class="level-bar"><div class="level-fill" style="--target:40%"></div></div>
+            <span class="level-label">Pemula</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- IoT -->
+    <div class="skill-category fade-up">
+      <div class="category-title">Internet of Things</div>
+      <div class="skills-grid">
+
+        <div class="skill-card" data-level="55">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Pemahaman</h3>
+          </div>
+          <p>Memiliki pemahaman dasar tentang konsep jaringan komputer dan Internet of Things (IoT), termasuk cara kerja perangkat, alur komunikasi data, serta penerapan teknologi dalam kehidupan sehari-hari.</p>
+          <div class="skill-level">
+            <div class="level-bar"><div class="level-fill" style="--target:70%"></div></div>
+            <span class="level-label">Menengah</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-level="70">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4l4 4-4 4M12 18h8"/></svg>
+            </div>
+            <h3>Programming Dasar</h3>
+          </div>
+          <p>Memiliki kemampuan dasar pemrograman, meliputi logika, struktur kode, dan implementasi sederhana pada project jaringan dan IoT.</p>
+          <div class="skill-level">
+            <div class="level-bar"><div class="level-fill" style="--target:50%"></div></div>
+            <span class="level-label">Pemula</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TOOLS -->
+    <div class="tools-wrap fade-up">
+      <div class="category-title">Tools yang Digunakan</div>
+      <div class="tools-grid">
+        <span class="tool-chip">Cisco Packet Tracer</span>
+        <span class="tool-chip">Wireshark</span>
+        <span class="tool-chip">GNS3</span>
+        <span class="tool-chip">VMware / VirtualBox</span>
+        <span class="tool-chip">Ubuntu Server</span>
+        <span class="tool-chip">Windows Server</span>
+        <span class="tool-chip">Arduino IDE</span>
+        <span class="tool-chip">PuTTY</span>
+        <span class="tool-chip">VS Code</span>
+        <!-- Tambah tool lain di sini -->
+      </div>
+    </div>
+
+    <!-- SERTIFIKASI -->
+    <div class="tools-wrap fade-up" style="margin-top:4rem;">
+      <div class="category-title">Sertifikasi & Penghargaan</div>
+      <div class="cert-list">
+        <div class="cert-item">
+          <div>
+            <div class="cert-name">Networking Basics</div>
+            <div class="cert-issuer">Cisco Networking Academy · 2024</div>
+          </div>
+          <span class="cert-badge">Selesai</span>
+        </div>
+        <!-- Tambah sertifikat lain di sini -->
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 · Dibuat oleh Zildan Nur Zaman</p>
+  </footer>
+
+  <script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 120);
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// Animate level bars
+window.addEventListener('load', () => {
+  document.querySelectorAll('.level-fill').forEach(bar => {
+    const style = bar.getAttribute('style') || '';
+    const match = style.match(/--target:\s*([\d]+%)/);
+    const target = match ? match[1] : '0%';
+    bar.style.width = '0%';
+    bar.style.transition = 'width 1s ease 0.4s';
+
+    const rect = bar.getBoundingClientRect();
+    const sudahTerlihat = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (sudahTerlihat) {
+      // Langsung animasi kalau sudah terlihat saat halaman dibuka
+      setTimeout(() => { bar.style.width = target; }, 400);
+    } else {
+      // Tunggu sampai di-scroll ke sana
+      const io = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          bar.style.width = target;
+          io.disconnect();
+        }
+      }, { threshold: 0, rootMargin: '0px 0px -20px 0px' });
+      io.observe(bar);
+    }
+  });
+});
+  </script>
+</body>
+</html>

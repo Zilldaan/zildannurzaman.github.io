@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang — Zildan</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-grid {
+      display: flex;
+      flex-direction: row;
+      gap: 4rem;
+      align-items: flex-start;
+      margin-top: 3rem;
+    }
+
+    .avatar-box {
+      width: 280px;
+      min-width: 280px;
+      height: 360px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .avatar-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .about-content { flex: 1; }
+    .about-content p { margin-bottom: 1.2rem; }
+
+    .bio-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+
+    .meta-item { border-left: 2px solid var(--accent); padding-left: 1rem; }
+    .meta-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.25rem; }
+    .meta-value { font-size: 0.95rem; color: var(--text); font-weight: 400; }
+
+    .stats-row {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: left; }
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.4rem;
+      color: var(--accent);
+      line-height: 1;
+      display: block;
+    }
+    .stat-lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.25rem; }
+
+    @media (max-width: 720px) {
+      .about-grid { flex-direction: column; gap: 2rem; }
+      .avatar-box { width: 100%; min-width: unset; height: 280px; }
+      .bio-meta { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+<a href="index.html" class="nav-logo" style="display:flex; align-items:center; text-decoration:none; gap:2px;">
+  <span style="font-family:'Arial Black',sans-serif; font-size:1.5rem; font-weight:900; color:#2D5BE3; letter-spacing:-1px; line-height:1;">Z</span>
+  <span style="font-family:'Arial Black',sans-serif; font-size:1.5rem; font-weight:900; color:#1A1917; letter-spacing:-1px; line-height:1;">N</span>
+  <span style="font-family:'Arial Black',sans-serif; font-size:1.5rem; font-weight:900; color:#2D5BE3; letter-spacing:-1px; line-height:1;">Z</span>
+</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">Tentang</a></li>
+      <li><a href="skills.html">Keahlian</a></li>
+      <li><a href="projects.html">Proyek</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="section-label">Tentang Saya</div>
+
+    <div class="about-grid">
+
+      <!-- FOTO / AVATAR -->
+      <div class="avatar-box fade-up">
+        <img src="Foto-Zildan.jpg" alt="Foto Zildan Nur Zaman">
+      </div>
+
+      <!-- KONTEN -->
+      <div class="about-content fade-up">
+        <h2>Siapa saya?</h2>
+
+        <p>
+          Saya adalah <strong>Zildan Nur Zaman</strong>, siswa kelas XI di <strong>SMKN 13 Bandung</strong>, jurusan Teknik Jaringan Komputer dan Telekomunikasi (TJKT).
+        </p>
+        <p>
+          Saya tertarik pada dunia jaringan komputer sejak pertama kali belajar bagaimana sebuah paket data bisa berpindah dari satu perangkat ke perangkat lain di seluruh dunia. Dari situ, saya mulai mendalami konfigurasi jaringan, Subnetting IP Address, hingga administrasi server Linux.
+        <p>
+          Saat ini saya masih dalam tahap belajar dan terus meningkatkan pemahaman di bidang jaringan komputer, baik dari materi sekolah maupun latihan mandiri.
+
+        <div class="bio-meta">
+          <div class="meta-item">
+            <div class="meta-label">Sekolah</div>
+            <div class="meta-value">SMKN 13 Bandung</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Kelas</div>
+            <div class="meta-value">XI TJKT 3</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Lokasi</div>
+            <div class="meta-value">Bandung, Jawa Barat</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Minat</div>
+            <div class="meta-value">Networking, IoT</div>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat">
+            <span class="stat-num">11+</span>
+            <div class="stat-lbl">Proyek selesai</div>
+          </div>
+          <div class="stat">
+            <span class="stat-num">1</span>
+            <div class="stat-lbl">Sertifikasi</div>
+          </div>
+          <div class="stat">
+            <span class="stat-num">2th</span>
+            <div class="stat-lbl">Belajar networking</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2.5rem; display: flex; gap: 1rem;">
+          <a href="projects.html" class="btn-primary">Lihat Proyek</a>
+          <a href="contact.html" class="btn-secondary">Kontak</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 · Dibuat oleh Zildan Nur Zaman</p>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 120);
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

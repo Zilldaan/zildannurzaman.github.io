@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home — Zildan</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hero {
+      min-height: calc(100vh - 7rem);
+      display: flex;
+      align-items: center;
+    }
+    .hero-inner { max-width: 620px; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 5rem;
+    }
+
+    .quick-link {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.6rem;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .quick-link:hover { transform: translateX(4px); border-color: var(--accent); }
+    .quick-link span { font-size: 0.9rem; font-weight: 400; }
+    .quick-link em { color: var(--muted); font-style: normal; font-size: 1rem; }
+  </style>
+</head>
+<body>
+
+  <nav>
+<a href="index.html" class="nav-logo" style="display:flex; align-items:center; text-decoration:none; gap:2px;">
+  <span style="font-family:'Arial Black',sans-serif; font-size:1.5rem; font-weight:900; color:#2D5BE3; letter-spacing:-1px; line-height:1;">Z</span>
+  <span style="font-family:'Arial Black',sans-serif; font-size:1.5rem; font-weight:900; color:#1A1917; letter-spacing:-1px; line-height:1;">N</span>
+  <span style="font-family:'Arial Black',sans-serif; font-size:1.5rem; font-weight:900; color:#2D5BE3; letter-spacing:-1px; line-height:1;">Z</span>
+</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">Tentang</a></li>
+      <li><a href="skills.html">Keahlian</a></li>
+      <li><a href="projects.html">Proyek</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="hero-tag">Siswa SMK · TJKT</div>
+        <h1>
+          Halo, saya<br>
+          <em>Zildan</em> —<br>
+          Student of Network Engineering
+        </h1>
+        <p style="max-width:460px; font-size:1.05rem;">
+          Siswa SMK jurusan Teknik Jaringan Komputer dan Telekomunikasi yang tertarik pada jaringan, subnetting, dan Internet of Things (IoT).
+        </p>
+        <div class="hero-cta">
+          <a href="projects.html" class="btn-primary">Lihat Proyek</a>
+          <a href="contact.html" class="btn-secondary">Hubungi Saya</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="quick-links fade-up">
+      <a href="about.html" class="quick-link">
+        <span>Tentang Saya</span>
+        <em>→</em>
+      </a>
+      <a href="skills.html" class="quick-link">
+        <span>Keahlian</span>
+        <em>→</em>
+      </a>
+      <a href="projects.html" class="quick-link">
+        <span>Proyek</span>
+        <em>→</em>
+      </a>
+      <a href="contact.html" class="quick-link">
+        <span>Kontak</span>
+        <em>→</em>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 · Dibuat oleh Zildan Nur Zaman</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.fade-up').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 200 + i * 100);
+    });
+  </script>
+</body>
+</html>

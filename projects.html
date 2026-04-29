@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyek — [Nama Kamu]</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .projects-intro { max-width: 500px; margin-bottom: 4rem; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.07); }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .project-card:hover::before { opacity: 1; }
+
+    .project-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.5rem;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+      line-height: 1.35;
+    }
+
+    .project-card p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+    .tag {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.72rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .project-status {
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+    }
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      display: inline-block;
+    }
+    .dot.ongoing { background: #f59e0b; }
+    .dot.planned { background: var(--border); }
+
+    .project-link {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: gap 0.15s;
+    }
+    .project-link:hover { gap: 0.7rem; }
+
+    .featured-badge {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+<a href="index.html" class="nav-logo" style="display:flex; align-items:center; text-decoration:none; gap:2px;">
+  <span style="font-family:'Arial Black',sans-serif; font-size:1.5rem; font-weight:900; color:#2D5BE3; letter-spacing:-1px; line-height:1;">Z</span>
+  <span style="font-family:'Arial Black',sans-serif; font-size:1.5rem; font-weight:900; color:#1A1917; letter-spacing:-1px; line-height:1;">N</span>
+  <span style="font-family:'Arial Black',sans-serif; font-size:1.5rem; font-weight:900; color:#2D5BE3; letter-spacing:-1px; line-height:1;">Z</span>
+</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Tentang</a></li>
+      <li><a href="skills.html">Keahlian</a></li>
+      <li><a href="projects.html" class="active">Proyek</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="section-label">Proyek</div>
+
+    <div class="projects-intro fade-up">
+      <h2>Yang sudah aku buat</h2>
+      <p>Kumpulan proyek dari hasil praktikum sekolah, tugas, maupun proyek pribadi untuk mengasah keahlian di bidang jaringan dan IT.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 -->
+      <div class="project-card fade-up">
+        <span class="featured-badge">Unggulan</span>
+        <div class="project-num">01</div>
+        <h3>Simulasi Jaringan Kantor Kecil</h3>
+        <p>
+          Desain dan implementasi topologi jaringan untuk kantor kecil menggunakan perangkat fisik. Mencakup konfigurasi PPPoE, VLAN, DHCP server, DNS, inter-VLAN routing, dan koneksi ke internet via NAT.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Cisco Packet Tracer</span>
+          <span class="tag">VLAN</span>
+          <span class="tag">DHCP</span>
+          <span class="tag">NAT</span>
+          <span class="tag">PPPoE</span>
+        </div>
+        <div class="project-footer">
+          <span class="project-status"><span class="dot"></span> Selesai</span>
+          <a href="https://zildannnxitjkt3.blogspot.com/2026/04/tkjn-lkpd-membuat-jaringan-menggunakan.html" class="project-link">Lihat Detail →</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="project-card fade-up">
+        <div class="project-num">02</div>
+        <h3>Web Server di Linux Ubuntu</h3>
+        <p>
+          Instalasi dan konfigurasi Apache web server di Ubuntu Server 22.04. Termasuk setup virtual host untuk beberapa domain, konfigurasi SSL dengan Let's Encrypt, dan deployment halaman web statis.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Ubuntu Server</span>
+          <span class="tag">Apache</span>
+          <span class="tag">SSL/TLS</span>
+          <span class="tag">Virtual Host</span>
+          <span class="tag">Linux CLI</span>
+        </div>
+        <div class="project-footer">
+          <span class="project-status"><span class="dot"></span> Selesai</span>
+          <a href="https://zildannnxitjkt3.blogspot.com/2026/01/asj-lkpd-12-web-server.html" class="project-link">Lihat Detail →</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="project-card fade-up">
+        <div class="project-num">03</div>
+        <h3>Prototipe IoT</h3>
+        <p>
+          Membuat prototipe IoT sederhana dengan tujuan memberikan inovasi baru untuk mempermudah aktivitas dalam kehidupan sehari - hari.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Arduino UNO</span>
+          <span class="tag">Arduino IDE</span>
+          <span class="tag">C++</span>
+        </div>
+        <div class="project-footer">
+          <span class="project-status"><span class="dot"></span> Selesai</span>
+          <a href="https://zildannnxitjkt3.blogspot.com/2024/12/prototipe-iot-jemuran-otomatis.html" class="project-link">Lihat Detail →</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 — ONGOING (contoh) -->
+      <div class="project-card fade-up">
+        <div class="project-num">04</div>
+        <h3>Website Portfolio Personal</h3>
+        <p>
+          Membuat website portfolio ini dari nol menggunakan HTML, CSS, dan JavaScript murni tanpa framework. Berfokus pada desain bersih, ringan, dan mudah dikustomisasi.
+        </p>
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <div class="project-footer">
+          <span class="project-status"><span class="dot ongoing"></span> Sedang dikerjakan</span>
+          <a href="#" class="project-link">GitHub →</a>
+        </div>
+      </div>
+
+      <!-- TEMPLATE TAMBAH PROYEK BARU -->
+      <!--
+      <div class="project-card fade-up">
+        <div class="project-num">05</div>
+        <h3>[Judul Proyek]</h3>
+        <p>[Deskripsi singkat proyek kamu]</p>
+        <div class="project-tags">
+          <span class="tag">[Tag 1]</span>
+          <span class="tag">[Tag 2]</span>
+        </div>
+        <div class="project-footer">
+          <span class="project-status"><span class="dot"></span> Selesai</span>
+          <a href="#" class="project-link">Lihat Detail →</a>
+        </div>
+      </div>
+      -->
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 · Dibuat oleh Zildan Nur Zaman</p>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 100);
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
